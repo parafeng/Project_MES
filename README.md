@@ -23,6 +23,19 @@ Dự án xây dựng hệ thống giả lập game retro trên Tinker Board sử
 
 ## Bắt đầu nhanh
 
+### 📚 **NEW! Complete Setup Guide**
+**👉 [SETUP_GUIDE.md](SETUP_GUIDE.md) - Hướng dẫn từ Zero đến Hero (2-3 giờ)**
+
+Chi tiết từng bước:
+- ✅ Setup môi trường development
+- ✅ Clone repository và build game
+- ✅ Setup Lakka trên Tinker Board
+- ✅ Deploy game và chơi trên TV!
+
+**Hoặc [QUICK_REFERENCE.md](QUICK_REFERENCE.md) - Cheat sheet cho người đã quen (5 phút)**
+
+---
+
 ### 🎯 Chọn lộ trình của bạn:
 
 1. **Chỉ Emulation System** (Setup Lakka, chơi retro games)
@@ -36,7 +49,17 @@ Dự án xây dựng hệ thống giả lập game retro trên Tinker Board sử
    - 📖 Đọc: [HYBRID_ROADMAP.md](HYBRID_ROADMAP.md) - 6-8 tuần roadmap
    - Setup emulation system + Build game riêng
 
+4. **🚀 Complete Step-by-Step** - Từ đầu đến cuối!
+   - 📖 Đọc: [SETUP_GUIDE.md](SETUP_GUIDE.md) - Chi tiết mọi bước
+   - Clone → Build → Deploy → Play!
+
 ## Tài liệu chi tiết
+
+### 🎯 Getting Started (Bắt đầu)
+- 📖 **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - ⭐ Complete setup từ đầu đến cuối (2-3h)
+- 📖 **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - ⚡ Cheat sheet nhanh (5 min)
+- 📖 [QUICK_START.md](QUICK_START.md) - Lakka quick start (30 min)
+- 📖 [HYBRID_ROADMAP.md](HYBRID_ROADMAP.md) - Roadmap 6-8 tuần kết hợp cả hai
 
 ### Emulation System
 - 📖 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) - Kế hoạch thực hiện chi tiết 10 giai đoạn
@@ -46,9 +69,6 @@ Dự án xây dựng hệ thống giả lập game retro trên Tinker Board sử
 ### Game Development
 - 📖 [docs/HOMEBREW_DEVELOPMENT.md](docs/HOMEBREW_DEVELOPMENT.md) - Hướng dẫn tạo homebrew games
 - 📖 [game_project/chicken_shooter_gb/README.md](game_project/chicken_shooter_gb/README.md) - Chicken Shooter guide
-
-### Hybrid Approach
-- 📖 [HYBRID_ROADMAP.md](HYBRID_ROADMAP.md) - ⭐ Roadmap 6-8 tuần kết hợp cả hai
 
 ## Cấu trúc dự án
 ```
