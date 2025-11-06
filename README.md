@@ -4,6 +4,8 @@
 Dự án xây dựng hệ thống giả lập game retro trên Tinker Board sử dụng Lakka (Linux distribution chuyên biệt cho retro gaming), RetroArch front-end và Libretro cores.
 
 ## Tính năng chính
+
+### Emulation System
 - ✅ Giả lập nhiều nền tảng game console cổ điển (NES, SNES, Genesis, PSX, N64, v.v.)
 - ✅ Giao diện thân thiện với RetroArch GUI
 - ✅ Hỗ trợ controllers qua USB và Bluetooth
@@ -12,13 +14,41 @@ Dự án xây dựng hệ thống giả lập game retro trên Tinker Board sử
 - ✅ Netplay (chơi online)
 - ✅ Scripts quản lý và backup tự động
 
+### Game Development (NEW! 🎮)
+- ✅ Complete Game Boy Chicken Shooter game
+- ✅ Full source code với comments
+- ✅ One-command build system
+- ✅ Auto-deploy to Tinker Board
+- ✅ GBDK setup script
+
 ## Bắt đầu nhanh
-**Đọc ngay:** [QUICK_START.md](QUICK_START.md) - Hướng dẫn 30 phút để cài đặt và chơi game đầu tiên!
+
+### 🎯 Chọn lộ trình của bạn:
+
+1. **Chỉ Emulation System** (Setup Lakka, chơi retro games)
+   - 📖 Đọc: [QUICK_START.md](QUICK_START.md) - 30 phút setup
+
+2. **Chỉ Game Development** (Build Chicken Shooter game)
+   - 📖 Đọc: [game_project/chicken_shooter_gb/README.md](game_project/chicken_shooter_gb/README.md)
+   - 🚀 Run: `./game_project/setup_gbdk.sh`
+
+3. **⭐ HYBRID (Recommended!)** - Làm cả hai!
+   - 📖 Đọc: [HYBRID_ROADMAP.md](HYBRID_ROADMAP.md) - 6-8 tuần roadmap
+   - Setup emulation system + Build game riêng
 
 ## Tài liệu chi tiết
-- 📖 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) - Kế hoạch thực hiện chi tiết từng giai đoạn
+
+### Emulation System
+- 📖 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) - Kế hoạch thực hiện chi tiết 10 giai đoạn
 - 📖 [docs/AVAILABLE_TOOLS.md](docs/AVAILABLE_TOOLS.md) - Danh sách công cụ và cores có sẵn
 - 📖 [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) - Giải quyết các vấn đề thường gặp
+
+### Game Development
+- 📖 [docs/HOMEBREW_DEVELOPMENT.md](docs/HOMEBREW_DEVELOPMENT.md) - Hướng dẫn tạo homebrew games
+- 📖 [game_project/chicken_shooter_gb/README.md](game_project/chicken_shooter_gb/README.md) - Chicken Shooter guide
+
+### Hybrid Approach
+- 📖 [HYBRID_ROADMAP.md](HYBRID_ROADMAP.md) - ⭐ Roadmap 6-8 tuần kết hợp cả hai
 
 ## Cấu trúc dự án
 ```
@@ -31,7 +61,16 @@ Project_MES/
 │   └── performance_test.sh  # Test hiệu năng
 ├── configs/              # File cấu hình mẫu
 │   └── retroarch_optimal.cfg  # RetroArch config tối ưu
-└── docs/                 # Tài liệu bổ sung
+├── docs/                 # Tài liệu bổ sung
+│   ├── AVAILABLE_TOOLS.md       # Danh sách công cụ built-in
+│   ├── HOMEBREW_DEVELOPMENT.md  # Game development guide
+│   └── TROUBLESHOOTING.md       # Giải quyết vấn đề
+└── game_project/         # 🎮 Game development
+    ├── setup_gbdk.sh         # GBDK auto-installer
+    └── chicken_shooter_gb/   # Complete Game Boy game
+        ├── main.c               # Game source code
+        ├── Makefile             # Build system
+        └── README.md            # Game documentation
 ```
 
 ## Scripts có sẵn
@@ -112,13 +151,46 @@ Main Menu > Online Updater > Core Downloader
 Main Menu > [Platform Collection] > [Game] > Run
 ```
 
-## Development
+## 🎮 Game Development - Chicken Shooter
 
-### Tạo Homebrew Game (Optional)
-Nếu muốn tự tạo game (ví dụ: game bắn gà), xem:
-- [docs/HOMEBREW_DEVELOPMENT.md](docs/HOMEBREW_DEVELOPMENT.md)
+### Quick Start
+```bash
+# 1. Setup GBDK
+cd game_project
+./setup_gbdk.sh
 
-### Công cụ phát triển
+# 2. Build game
+cd chicken_shooter_gb
+make
+
+# 3. Test on emulator
+make test
+
+# 4. Deploy to Tinker Board
+make deploy IP=192.168.1.XXX
+```
+
+### Game Features
+- 🐔 **Simple shoot-em-up**: Bắn những con gà rơi xuống!
+- 🎮 **Game Boy native**: Chạy trên hardware thật hoặc emulator
+- 💯 **Score tracking**: Theo dõi điểm số
+- 🔫 **Bullet system**: Bắn đạn với cooldown
+- 💥 **Collision detection**: Đạn vs gà, gà vs player
+- 🎯 **Game over**: Khi bị gà đâm
+
+### Technologies
+- **Platform**: Game Boy / Game Boy Color
+- **Language**: C
+- **Compiler**: GBDK-2020 (Game Boy Development Kit)
+- **Build**: Make
+- **Test**: SameBoy, BGB, mGBA emulators
+
+### Development Guide
+Xem chi tiết:
+- [game_project/chicken_shooter_gb/README.md](game_project/chicken_shooter_gb/README.md) - Build & deploy guide
+- [docs/HOMEBREW_DEVELOPMENT.md](docs/HOMEBREW_DEVELOPMENT.md) - Full tutorial với code samples
+
+### Công cụ phát triển cho platforms khác
 - **NES**: cc65 (C compiler), NESASM (assembler)
 - **SNES**: WLA-DX, bass
 - **Genesis**: SGDK (Sega Genesis Development Kit)
